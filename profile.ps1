@@ -88,8 +88,15 @@ function gsync {
     param([string]$message)
     git add .
     git commit -m $message
-    git push
+    
+    # Check if an upstream branch is set; if not, set it automatically
+    $branch = git branch --show-current
+    git push -u origin $branch 2>$null
+    if ($LASTEXITCODE -ne 0) {
+        git push
+    }
 }
+
 
 # Open the current directory in VS Code instantly
 # Usage: c.
