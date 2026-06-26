@@ -26,6 +26,14 @@ A custom, streamlined configuration that transforms the standard Windows PowerSh
 | `pingt <host>` | `ping.exe` | Rapid network response latency test wrapper (defaults to google.com). |
 
 ---
+## 📦 1-Line Instant Installation
+
+Open an administrative PowerShell window and run this single line to automatically download, install, authorize, and boot up this profile layout on any Windows machine:
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; if (!(Test-Path PROFILE)) New-Item -Type File -Path PROFILE -Force }; Invoke-RestMethod -Uri "https://githubusercontent.com" | Out-File -FilePath \(PROFILE -Encoding utf8; &\)PROFILE
+```
+
 
 ## 🚀 Standard Installation & Setup
 
